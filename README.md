@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Maffy
+
+Maffy is a comprehensive Next.js application designed to facilitate the management of WhatsApp messages, groups, and webhooks. It utilizes a modern tech stack including TypeScript, Tamagui for UI components, and Supabase for backend services.
+
+## Features
+
+- **WhatsApp Message Management**: Send and manage various types of WhatsApp messages such as text, images, documents, audio, location, and buttons.
+- **Group Management**: Efficiently organize and manage WhatsApp groups.
+- **Webhook Testing**: Test and manage webhooks for real-time updates.
+- **Responsive Design**: Built with Tamagui for consistent cross-platform UI.
+- **Internationalization**: Supports multiple languages using i18next and expo-localization.
+- **State Management**: Utilizes Zustand for efficient state management.
+- **Data Fetching**: Uses TanStack React Query for data fetching and caching.
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, TypeScript, Tamagui
+- **Backend**: Supabase, Prisma, MongoDB
+- **State Management**: Zustand
+- **Data Fetching**: TanStack React Query
+- **Internationalization**: i18next, expo-localization
+- **Monorepo Management**: Turbo
+- **Payment Processing**: Stripe
 
 ## Getting Started
 
-First, run the development server:
+To get started with Maffy, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/spaco67/whatsapp_tester_maffy.git
+   cd whatsapp_tester_maffy
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Set up environment variables**:
+   Create a `.env` file in the root directory and add your environment variables. Refer to `.env.example` for the required variables.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## Learn More
+5. **Open your browser**:
+   Visit [http://localhost:3000](http://localhost:3000) to view the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **apps**: Contains the Next.js and Expo applications.
+- **packages**: Shared code and components.
+- **api**: Backend services and API routes.
+- **components**: UI components built with Tamagui.
+- **pages**: Next.js pages.
+- **prisma**: Prisma schema and database configuration.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/). Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before making a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Tamagui](https://tamagui.dev/)
+- [Supabase](https://supabase.io/)
+- [Zod](https://github.com/colinhacks/zod)
+- [Stripe](https://stripe.com/)
