@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+}
+
+model Contact {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  whatsappId String  @unique // The WhatsApp ID from the API
+  name      String?
+  pushname  String?
+  type      String   // 'individual' or 'group'
+  image     String?
+  messages  Message[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Message {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  whatsappId  String   @unique // The WhatsApp message ID from the API
+  from        String
+  to          String
+  type        String   // 'text', 'image', 'document', etc.
+  content     Json     // Flexible content structure based on type
+  timestamp   Int
+  contact     Contact  @relation(fields: [contactId], references: [id])
+  contactId   String   @db.ObjectId
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Stats {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  totalMessages    Int      @default(0)
+  activeChats      Int      @default(0)
+  pendingResponses Int      @default(0)
+  messageTypes     Json     // Store message type counts
+  updatedAt        DateTime @updatedAt
+} 
